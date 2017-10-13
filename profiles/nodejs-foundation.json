@@ -1,0 +1,8 @@
+{
+  "name": "Node.js Foundation Account",
+  "email": "build@iojs.org",
+  "homepage": "https://nodejs.org",
+  "github": "nodejs/",
+  "twitter": "nodejs",
+  "freenode": "#node-build"
+}

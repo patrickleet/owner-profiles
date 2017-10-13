@@ -9,10 +9,12 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "clean-deep": "^2.0.1",
+    "csv-write-stream": "^2.0.0",
+    "limiter": "^1.1.2",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0",
     "npm-user": "^2.1.0",
-    "owners": "^1.2.0",
+    "owners": "^1.259.0",
     "standard": "^8.6.0",
     "standard-markdown": "^2.3.0"
   },
@@ -21,6 +23,8 @@
     "compress": "tar cfzv profiles.tgz profiles",
     "decompress": "tar xfz profiles.tgz",
     "build": "node scripts/build.js && npm run compress",
+    "toCSV": "node scripts/toCSV.js",
     "test": "mocha && standard && standard-markdown"
-  }
+  },
+  "dependencies": {}
 }
