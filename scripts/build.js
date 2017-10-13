@@ -10,10 +10,15 @@ const prefetchedUsernames = fs.readdirSync(path.join(__dirname, '../profiles'))
 const targets = lodash.difference(allUsernames, prefetchedUsernames)
 
 console.log(`targets.length: ${targets.length}`)
+let numProcessed = 0
 
 targets.forEach(username => {
   limiter.removeTokens(1, () => {
     getProfile(username)
+      .then(profile => {
+        numProcessed++
+        console.log(`${numProcessed}/${targets.length}`)
+      })
       .catch(error => {
         if (error.statusCode) {
           console.error(`${username} failed: (${error.statusCode})`)
